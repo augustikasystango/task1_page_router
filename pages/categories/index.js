@@ -1,7 +1,7 @@
 
-import { fetchCategories } from "../../Apis/Blogapi";
+import { fetchCategories } from "../../api/Blogapi";
 import Link from "next/link";
-import { useRouter } from "next/router";
+
 function CateogoriesPage({ products }) {
     
     return (
