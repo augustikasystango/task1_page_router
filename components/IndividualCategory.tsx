@@ -27,11 +27,16 @@ const IndividualCategory: React.FC<{item:Blogs}> = ({ item }) => {
             alt="Category Image"
             className="rounded-md shadow-md"
           />
+          
         </div>
+        <div className="text-lg text-justify text-gray-700 mt-6 px-4 leading-relaxed">
+          {MESSAGES.BLOG_CONTENT}
+        </div>
+       
 
         <Link href={ROUTES.CATEGORIES}>
           <span className="inline-block mt-4  p-2 rounded-md text-blue-600 text-lg font-semibold hover:text-blue-500 hover:shadow-md hover:shadow-blue-400 transition duration-300 ease-in-out transform hover:scale-105">
-            Back
+            {MESSAGES.GO_BACK}
           </span>
         </Link>
         <Link href={ROUTES.HOME}>

@@ -29,7 +29,9 @@ const CategoryList: React.FC<{ products: Blogs[] }> = ({ products })=> {
                 <span className="text-lg font-semibold rounded-md p-3 text-blue-600 ">
                   {category.blogs}
                 </span>
-                <div>By {category.name}</div>
+                <div className="text-sm text-gray-500 mt-2 italic">
+                  By <span className="font-semibold text-blue-600">{category.name}</span>
+                </div>
               </Link>
             </li>
           ))}
