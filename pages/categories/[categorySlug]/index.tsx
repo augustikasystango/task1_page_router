@@ -1,4 +1,4 @@
-import { fetchCategories } from "../../../api/Blogapi";
+import { fetchCategories } from "../../../api/BlogApi";
 
 import { Blogs } from '@/types';
 import IndividualCategory from "@/components/IndividualCategory";

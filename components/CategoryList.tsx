@@ -19,7 +19,7 @@ const CategoryList: React.FC<{ products: Blogs[] }> = ({ products })=> {
         <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
           {MESSAGES.BLOG_CATEGORY}
         </h1>
-        <ul className="space-y-4">
+        {products.length === 0 ? (<p>No Categories Found</p>) :(   <ul className="space-y-4">
           {products.map((category) => (
             <li
               key={category.id}
@@ -35,7 +35,8 @@ const CategoryList: React.FC<{ products: Blogs[] }> = ({ products })=> {
               </Link>
             </li>
           ))}
-        </ul>
+        </ul>) }
+     
       </div>
     </div>
   );

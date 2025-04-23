@@ -1,6 +1,6 @@
 
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
-import { fetchCategories } from "../../api/Blogapi";
+import { fetchCategories } from "../../api/BlogApi";
 
 import { Blogs } from '@/types';
 import CategoryList from '@/components/CategoryList';
