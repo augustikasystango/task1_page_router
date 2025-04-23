@@ -1,4 +1,4 @@
-import {Blogs} from '../../types/Blogs'
+import {Blogs} from '../../types'
 const baseUrl = `https://67eb8191aa794fb3222a78fb.mockapi.io/blogs/event`;
 
 
