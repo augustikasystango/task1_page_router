@@ -1,8 +1,13 @@
-
+import { GetStaticProps } from 'next';
 import { fetchCategories } from "../../api/Blogapi";
 import Link from "next/link";
+import { Blogs } from '@/types/Blogs';
 
-function CateogoriesPage({ products }) {
+interface CategoriesPageProps {
+    products:Blogs[]
+}
+
+const CategoriesPage: React.FC<CategoriesPageProps> = ({ products }) =>{
     return (
         <div className="min-h-screen bg-gray-100 py-10 px-6">
             <div className="max-w-4xl mx-auto">
@@ -28,13 +33,13 @@ function CateogoriesPage({ products }) {
     );
 }
 
-export async function getStaticProps() {
-    const data = await fetchCategories();
+export const getStaticProps: GetStaticProps<CategoriesPageProps> = async () => {
+    const data:Blogs[] = await fetchCategories();
     return {
-        props: {
-            products: data
-        }
-    }
-}
+      props: {
+        products: data,
+      },
+    };
+  };
 
-export default CateogoriesPage;
+export default CategoriesPage;
