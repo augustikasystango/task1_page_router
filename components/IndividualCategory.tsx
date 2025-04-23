@@ -3,16 +3,15 @@ import { Blogs } from '@/types/index';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
+import { MESSAGES} from '@/constants/messages';
+import {ROUTES} from '@/constants/routes'
 
-interface Props {
-  item: Blogs;
-}
 
-const IndividualCategory: React.FC<Props> = ({ item }) => {
+const IndividualCategory: React.FC<{item:Blogs}> = ({ item }) => {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <div className="text-center mt-10 text-gray-600 text-xl">Loading...</div>;
+    return <div className="text-center mt-10 text-gray-600 text-xl">{MESSAGES.LOADING}</div>;
   }
 
   return (
@@ -30,9 +29,14 @@ const IndividualCategory: React.FC<Props> = ({ item }) => {
           />
         </div>
 
-        <Link href="/categories">
-          <span className="inline-block mt-4 p-2 rounded-md text-blue-600 text-lg font-semibold hover:text-blue-500 hover:shadow-md hover:shadow-blue-400 transition duration-300 ease-in-out transform hover:scale-105">
+        <Link href={ROUTES.CATEGORIES}>
+          <span className="inline-block mt-4  p-2 rounded-md text-blue-600 text-lg font-semibold hover:text-blue-500 hover:shadow-md hover:shadow-blue-400 transition duration-300 ease-in-out transform hover:scale-105">
             Back
+          </span>
+        </Link>
+        <Link href={ROUTES.HOME}>
+          <span className="inline-block mt-4 p-2 rounded-md text-blue-600 text-lg font-semibold hover:text-blue-500 hover:shadow-md hover:shadow-blue-400 transition duration-300 ease-in-out transform hover:scale-105">
+            {MESSAGES.HOME}
           </span>
         </Link>
       </div>

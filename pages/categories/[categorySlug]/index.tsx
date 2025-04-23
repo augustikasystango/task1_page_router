@@ -9,10 +9,6 @@ import type {
   GetStaticPropsContext
 } from 'next'
 
-interface IndividualPageProps{
-  item : Blogs
-}
-
 
 export async function getStaticPaths() {
   const result = await fetchCategories();
@@ -36,11 +32,11 @@ export const getStaticProps = (async (context: GetStaticPropsContext) => {
   }
   return {
     props: { item },
-    revalidate: 5,
+    revalidate: 30,
   };
 }) satisfies GetStaticProps<{ item: Blogs }>;
 
-const IndividualCategories: React.FC<IndividualPageProps> = ({ item })=>{
+const IndividualCategories: React.FC<{item:Blogs}> = ({ item })=>{
 
   return <IndividualCategory item={item} />;
 }
